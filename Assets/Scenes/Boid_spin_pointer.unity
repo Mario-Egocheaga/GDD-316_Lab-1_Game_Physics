@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -329,8 +329,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boidPrefab: {fileID: 778618241813960082, guid: 41eb12cc807e8c94aa2e8d167563fc81, type: 3}
+  boidPrefab2: {fileID: 778618241813960082, guid: 22235fea086b9f548a369339f36d0643, type: 3}
+  boidPrefab3: {fileID: 778618241813960082, guid: 952f7fcf908fd64499bd49380ebe39d0, type: 3}
   boidAnchor: {fileID: 2063842646}
-  numBoids: 4
+  numBoids: 3
   spawnRadius: 100
   spawnDelay: 0.1
   velocity: 20

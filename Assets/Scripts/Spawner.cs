@@ -12,6 +12,8 @@ public class Spawner : MonoBehaviour
     // These fields allow you to adjust the spawning behavior of the boids
     [Header("Set in Inspector: Spawning")]
     public GameObject           boidPrefab;
+    public GameObject           boidPrefab2;
+    public GameObject           boidPrefab3;
     public Transform            boidAnchor;
     public int                  numBoids = 100;
     public float                spawnRadius = 100f;
@@ -36,12 +38,37 @@ public class Spawner : MonoBehaviour
         //Start instantiation of the Boids
         boids = new List<Boid>();
         InstantiateBoid();
+        InstantiateSecondBoid();
+        InstantiateThirdBoid();
         this.SphereFormation(10,3,7);
     }
 
     public void InstantiateBoid()
     {
         GameObject go = Instantiate(boidPrefab);
+        Boid b = go.GetComponent<Boid>();
+        b.transform.SetParent(boidAnchor);
+        boids.Add(b);
+        if (boids.Count < numBoids)
+        {
+            Invoke("InstantiateBoid", spawnDelay);
+        }
+    }
+
+    public void InstantiateSecondBoid()
+    {
+        GameObject go = Instantiate(boidPrefab2);
+        Boid b = go.GetComponent<Boid>();
+        b.transform.SetParent(boidAnchor);
+        boids.Add(b);
+        if (boids.Count < numBoids)
+        {
+            Invoke("InstantiateBoid", spawnDelay);
+        }
+    }
+    public void InstantiateThirdBoid()
+    {
+        GameObject go = Instantiate(boidPrefab3);
         Boid b = go.GetComponent<Boid>();
         b.transform.SetParent(boidAnchor);
         boids.Add(b);
